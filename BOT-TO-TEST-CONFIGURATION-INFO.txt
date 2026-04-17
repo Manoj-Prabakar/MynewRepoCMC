@@ -1,0 +1,138 @@
+# =============================================================================
+# Bot Testing Configuration
+# =============================================================================
+# This file contains all configuration parameters for connecting to and testing
+# your bot. Update the values below with your specific bot details.
+# =============================================================================
+
+# Platform Selection
+# Options: "dialogflow" (Google Dialogflow CX) or "amazon_lex" (Amazon Lex)
+# Default: "dialogflow" (for backward compatibility)
+PLATFORM = "dialogflow"
+
+# =============================================================================
+# Dialogflow CX Configuration (only required if PLATFORM = "dialogflow")
+# =============================================================================
+
+#agent_id   = projects/pjpaetoc-rd9i-vite-86tg-b0kgtq/locations/us-central1/agents/c8d507b6-7709-44b0-89ad-beba34d1768f
+
+#projects/pjpaetoc-rd9i-vite-86tg-b0kgtq/locations/us-central1/agents/c8d507b6-7709-44b0-89ad-beba34d1768f
+
+# Google Cloud Project ID where your Dialogflow CX agent is located
+# Example: "my-project-id" or "my-project-12345"
+#PROJECT_ID = "dialogflow-001-481218"
+PROJECT_ID = "pjpaetoc-rd9i-vite-86tg-b0kgtq"
+
+# Dialogflow CX location/region where your agent is deployed
+# Common values: "us-central1", "us-east1", "global", "asia-southeast1"
+# Example: "us-central1"
+LOCATION = "us-central1"
+
+# Dialogflow CX Agent ID (not the display name, but the actual agent ID)
+# You can find this in the Dialogflow CX console URL or agent settings
+# Example: "12345678-abcd-1234-abcd-123456789abc"
+#AGENT_ID = "379f4566-3a42-450e-83c3-0b5a5e019899"
+AGENT_ID = "c8d507b6-7709-44b0-89ad-beba34d1768f"
+
+# Path to your Google Cloud service account JSON key file
+# This file should have Dialogflow CX API permissions
+# Can be relative to this file or absolute path
+# Example: "./credentials/service-account-key.json" or "C:/path/to/key.json"
+CREDS_PATH = "D:\\projects\\TestingForBots\\audio-service\\dialogflow-001-481218-9b861bc17329.json"
+
+# =============================================================================
+# Optional Configuration Parameters
+# =============================================================================
+
+# Flow ID to start conversations from (optional)
+# If specified, conversations will start from this specific flow
+# Leave empty string "" if you want to start from default start flow
+# Example: "00000000-0000-0000-0000-000000000000"
+FLOW_ID = ""
+
+# Page ID to start conversations from (optional)
+# Only used if FLOW_ID is also specified
+# If both FLOW_ID and PAGE_ID are provided, conversations start from this page
+# Leave empty string "" if not needed
+# Example: "11111111-1111-1111-1111-111111111111"
+PAGE_ID = ""
+
+# Whether to start conversations with a greeting (optional)
+# Set to True to send "Hi" greeting first, then the test utterance
+# Set to False to start directly with the test utterance
+# Default: False
+START_WITH_GREETING = False
+
+# =============================================================================
+# TTS Service Configuration
+# =============================================================================
+
+# TTS Service to use for audio generation
+# Options: 
+#   - "google" (Google Cloud TTS - free tier available, default)
+#   - "edge" (Edge TTS - free, no API key required, Microsoft service)
+#   - "azure" (Azure Cognitive Services Speech - free tier available)
+# Default: "azure
+# 
+# Google TTS:
+#   - Requires service account key (CREDS_PATH above)
+#   - Free Tier: 4 million characters/month (standard voices), 1 million characters/month (WaveNet voices)
+# 
+# Edge TTS:
+#   - No API key required
+#   - Free, unlimited (uses Microsoft Edge TTS service)
+# 
+# Azure TTS:
+#   - Requires AZURE_SPEECH_KEY and AZURE_SPEECH_REGION (see below)
+#   - Free Tier: 5 million characters/month (standard voices), 0.5 million characters/month (neural voices)
+#   - Get credentials from: https://portal.azure.com -> Create Speech resource
+TTS_SERVICE = "edge"
+
+# =============================================================================
+# Azure TTS Configuration (only required if TTS_SERVICE = "azure")
+# =============================================================================
+
+# Azure Speech Service API Key
+# Get this from Azure Portal -> Your Speech Resource -> Keys and Endpoint
+# Example: "abc123def456ghi789jkl012mno345pqr678"
+AZURE_SPEECH_KEY = "BevfBGKNGQ4BbiX56Mz2mB447GOTgsRIROpY2bBgB3DGCoZisHQYJQQJ99CAACYeBjFXJ3w3AAAYACOGLYjO"
+
+# Azure Speech Service Region
+# Get this from Azure Portal -> Your Speech Resource -> Keys and Endpoint -> Location
+# Common values: "eastus", "westus2", "westeurope", "southeastasia"
+# Example: "eastus"
+AZURE_SPEECH_REGION = "eastus"
+
+# =============================================================================
+# Amazon Lex Configuration (only required if PLATFORM = "amazon_lex")
+# =============================================================================
+
+# Amazon Lex Bot ID
+# Get this from AWS Console -> Amazon Lex -> Your Bot -> Bot details
+# Example: "ABCDEFGHIJ"
+LEX_BOT_ID = ""
+
+# Amazon Lex Bot Alias ID
+# Get this from AWS Console -> Amazon Lex -> Your Bot -> Aliases
+# Common values: "TSTALIASID" (test) or "PRODALIASID" (production)
+# Example: "TSTALIASID"
+LEX_BOT_ALIAS_ID = ""
+
+# Amazon Lex Locale ID
+# Common values: "en_US", "es_US", "fr_FR", "de_DE"
+# Example: "en_US"
+LEX_LOCALE_ID = "en_US"
+
+# AWS Region where your Lex bot is located
+# Common values: "us-east-1", "us-west-2", "eu-west-1"
+# Example: "us-east-1"
+AWS_REGION = ""
+
+# AWS Access Key ID (optional - can use IAM role or environment variables instead)
+# Leave empty to use default AWS credentials
+AWS_ACCESS_KEY_ID = ""
+
+# AWS Secret Access Key (optional - can use IAM role or environment variables instead)
+# Leave empty to use default AWS credentials
+AWS_SECRET_ACCESS_KEY = ""
+
